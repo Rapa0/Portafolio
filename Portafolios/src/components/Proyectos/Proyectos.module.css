@@ -1,0 +1,622 @@
+/* Proyectos.module.css */
+
+.proyectos-container {
+    width: 100%;
+    margin: 0; /* Eliminado margin: 20px auto; */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
+    box-sizing: border-box;
+}
+
+.proyectos-container h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.action-buttons {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.toggle-form-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-form-button:hover {
+    background-color: #0056b3;
+}
+
+/* Form Section */
+.form-section {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-section input[type="text"],
+.form-section input[type="date"],
+.form-section textarea,
+.form-section select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-section textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-section button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.form-section button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.cancel-button:hover {
+    background-color: #c82333;
+}
+
+.file-input-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.uploaded-files-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.file-preview-item {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+}
+
+.preview-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.remove-file-button {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.remove-file-button:hover {
+    background-color: #c82333;
+}
+
+/* Project List (Grid Layout) */
+.project-list-container h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.no-projects-message {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 50px;
+    font-size: 1.1em;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Tarjetas más anchas */
+    gap: 30px;
+    padding: 15px;
+}
+
+/* Project Card */
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: auto;
+    height: auto;
+    position: relative;
+    cursor: default;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilos específicos para la tarjeta en modo de edición */
+.project-card.editing-mode {
+    border: 2px solid #007bff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+    transform: none;
+}
+
+.project-card.editing-mode .card-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.project-card.editing-mode .card-header h3 {
+    color: white;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #eaf5ff;
+    border-bottom: 1px solid #d4e8ff;
+}
+
+.card-header h3 {
+    margin: 0;
+    color: #0056b3;
+    font-size: 1.6em;
+    flex-grow: 1;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.card-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3em;
+    transition: transform 0.2s ease;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.card-actions button:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.edit-button {
+    color: #007bff;
+}
+
+.delete-button {
+    color: #dc3545;
+}
+
+.card-info {
+    padding: 15px;
+    font-size: 1em;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px 10px;
+    align-items: center;
+}
+
+.card-info p {
+    margin: 0;
+}
+
+.card-description {
+    padding: 15px;
+    font-size: 1em;
+    color: #444;
+    line-height: 1.6;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Contenido expandido siempre visible */
+.expanded-content-always-visible {
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.expanded-content-always-visible h4 {
+    color: #007bff;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+/* Image/Video Viewer in Expanded Content */
+.expanded-media-section {
+    margin-bottom: 25px;
+}
+
+.image-viewer {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    max-height: 40vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-expanded-media {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Asegura que se mantenga centrado verticalmente */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 1.8em;
+    border-radius: 50%;
+    z-index: 5;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:first-of-type {
+    left: 15px;
+}
+
+.nav-button:last-of-type {
+    right: 15px;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%); /* Mantiene la posición vertical al hacer hover */
+}
+
+.thumbnail-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dot:hover {
+    transform: scale(1.2);
+}
+
+.dot.active-dot {
+    background-color: #007bff;
+    transform: scale(1.1);
+}
+
+.video-player {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.youtube-responsive {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.youtube-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-player video {
+    width: 100%;
+    max-height: 450px;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-nav-buttons {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.video-nav-buttons button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 8px;
+    transition: background-color 0.3s ease;
+}
+
+.video-nav-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Código y Enlaces de Evidencia */
+.code-section, .links-section {
+    padding: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.code-section h4, .links-section h4 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.code-snippet {
+    background-color: #272822;
+    color: #f8f8f2;
+    border: 1px solid #333;
+    border-left: 5px solid #66d9ef;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-all;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+    margin-top: 15px;
+}
+
+.code-snippet code {
+    display: block;
+}
+
+
+/* Evidence Links Styles */
+.evidence-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.evidence-links li {
+    margin-bottom: 8px;
+}
+
+.evidence-links a {
+    color: #007bff;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.evidence-links a:hover {
+    text-decoration: underline;
+}
+
+/* Project Charts Container */
+.charts-container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.charts-container h3 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Permite 2 o más columnas */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .proyectos-container {
+        padding: 15px;
+    }
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 25px;
+    }
+    .project-card {
+        min-height: auto;
+    }
+    .card-header h3 {
+        font-size: 1.4em;
+    }
+    .card-actions button {
+        font-size: 1.1em;
+    }
+    .image-viewer {
+        height: 300px;
+    }
+    .charts-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+
+@media (max-width: 768px) {
+    .proyectos-container {
+        padding: 15px;
+    }
+    .form-section {
+        padding: 15px;
+    }
+    .form-section h3 {
+        font-size: 1.5em;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .project-card {
+        min-height: auto;
+    }
+    .card-media {
+        height: auto;
+    }
+    .image-viewer {
+        height: 250px;
+    }
+    .youtube-responsive {
+        padding-bottom: 65%;
+    }
+}
+
+@media (max-width: 480px) {
+    .proyectos-container {
+        padding: 10px;
+    }
+    .card-header h3 {
+        font-size: 1.1em;
+    }
+    .card-actions button {
+        font-size: 1em;
+    }
+    .image-viewer {
+        height: 200px;
+    }
+}
